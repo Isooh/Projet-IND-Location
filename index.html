@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>IND Location</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/d929329c74.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="description" content="Location de véhicules - IND Location" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#home">
+          <img
+            src="Images/IND Location.png"
+            alt="IND Location"
+            class="logo-img"
+          />
+          <span class="brand">IND <strong>Location</strong></span>
+        </a>
+
+        <nav class="main-nav" aria-label="Navigation principale">
+          <ul>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#cars">Véhicules</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <button class="btn btn-ghost login_btn">Connexion</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <h1>Louez <span>vos véhicules</span> facilement</h1>
+            <p>
+              Choisissez parmi une flotte variée : citadines, SUV, berlines et
+              véhicules de prestige. Tarifs compétitifs, service sécurisé et
+              assistance 24/7.
+            </p>
+            <div class="hero-cta">
+              <a href="#cars" class="btn btn-primary">Voir les véhicules</a>
+              <a href="#contact" class="btn btn-outline">Nous contacter</a>
+            </div>
+          </div>
+          <div class="hero-media">
+            <img src="Images/Range Rover.jpeg" alt="Voiture de location" />
+          </div>
+        </div>
+      </section>
+
+      <section id="cars" class="section vehicles">
+        <div class="container">
+          <h2 class="section-title">Nos véhicules</h2>
+
+          <div class="vehicles-filters" aria-hidden="false">
+            <input id="vehicle-search" type="search" placeholder="Rechercher un modèle, ex: Hyundai, Jeep..." aria-label="Rechercher des véhicules">
+            <select id="vehicle-marque" aria-label="Filtrer par marque">
+              <option value="">Toutes les marques</option>
+              <option value="Hyundai">Hyundai</option>
+              <option value="Jeep">Jeep</option>
+              <option value="Ford">Ford</option>
+              <option value="Kia">Kia</option>
+            </select>
+            <button id="clear-filters" type="button" aria-label="Effacer les filtres">Effacer</button>
+            <div id="vehicles-count" class="vehicles-count" aria-live="polite">&nbsp;</div>
+          </div>
+
+          <div class="grid vehicles-grid" id="vehicles-grid">
+            <article class="card vehicle-card" data-marque="Hyundai">
+              <div class="media">
+                <img src="Images/Elanra.jpeg" alt="Hyundai Elantra" />
+              </div>
+              <div class="card-body">
+                <h3>Hyundai Elantra</h3>
+                <p>Modèle: Elantra</p>
+                <div class="card-foot">
+                  <span class="price">30 000 FCFA</span>
+                  <a class="btn btn-sm" href="#">Réservez</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card vehicle-card" data-marque="Jeep">
+              <div class="media">
+                <img src="Images/Jeep G C.jpeg" alt="Jeep Grand Cherokee" />
+              </div>
+              <div class="card-body">
+                <h3>Jeep Grand Cherokee</h3>
+                <p>Modèle: Grand Cherokee</p>
+                <div class="card-foot">
+                  <span class="price">70 000 FCFA</span>
+                  <a class="btn btn-sm" href="#">Réservez</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card vehicle-card" data-marque="Ford">
+              <div class="media">
+                <img src="Images/Fusion.jpeg" alt="Ford Fusion" />
+              </div>
+              <div class="card-body">
+                <h3>Ford Fusion</h3>
+                <p>Modèle: Fusion</p>
+                <div class="card-foot">
+                  <span class="price">30 000 FCFA</span>
+                  <a class="btn btn-sm" href="#">Réservez</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card vehicle-card" data-marque="Hyundai">
+              <div class="media">
+                <img src="Images/Santafé.jpeg" alt="Hyundai Santafé" />
+              </div>
+              <div class="card-body">
+                <h3>Hyundai Santafé</h3>
+                <p>Modèle: Santafé</p>
+                <div class="card-foot">
+                  <span class="price">35 000 FCFA</span>
+                  <a class="btn btn-sm" href="#">Réservez</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card vehicle-card" data-marque="Hyundai">
+              <div class="media">
+                <img src="Images/Sonata.jpeg" alt="Hyundai Sonata" />
+              </div>
+              <div class="card-body">
+                <h3>Hyundai Sonata</h3>
+                <p>Modèle: Sonata</p>
+                <div class="card-foot">
+                  <span class="price">30 000 FCFA</span>
+                  <a class="btn btn-sm" href="#">Réservez</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card vehicle-card" data-marque="Kia">
+              <div class="media">
+                <img src="Images/Kia Sportage.jpeg" alt="Kia Sportage" />
+              </div>
+              <div class="card-body">
+                <h3>Kia Sportage</h3>
+                <p>Modèle: Sportage</p>
+                <div class="card-foot">
+                  <span class="price">35 000 FCFA</span>
+                  <a class="btn btn-sm" href="#">Réservez</a>
+                </div>
+                
+              </div>
+            </article>
+
+            <article class="card vehicle-card" data-marque="Ford">
+              <div class="media">
+                <img src="Images/2014 Ford Edge.jpeg" alt="Ford Edge" />
+              </div>
+              <div class="card-body">
+                <h3>Ford</h3>
+                <p>Modèle: Edge</p>
+                <div class="card-foot">
+                  <span class="price">35 000 FCFA</span>
+                  <a class="btn btn-sm" href="#">Réservez</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card vehicle-card" data-marque="Senova">
+              <div class="media">
+                <img src="Images/Senova.jpeg" alt="Senova X55" />
+              </div>
+              <div class="card-body">
+                <h3>Senova</h3>
+                <p>Modèle: X55</p>
+                <div class="card-foot">
+                  <span class="price">35 000 FCFA</span>
+                  <a class="btn btn-sm" href="#">Réservez</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section services">
+        <div class="container">
+          <h2 class="section-title">Nos services</h2>
+          <div class="grid services-grid">
+            <div class="card service-card">
+              <div class="icon"><i class="fa-solid fa-car-side"></i></div>
+              <h3>Assurance complète</h3>
+              <p>
+                Assurance incluse pour toutes les locations afin de voyager en
+                toute tranquillité.
+              </p>
+            </div>
+
+            <div class="card service-card">
+              <div class="icon"><i class="fa-solid fa-headset"></i></div>
+              <h3>Support 24/7</h3>
+              <p>
+                Assistance téléphonique et en ligne disponible à toute heure.
+              </p>
+            </div>
+
+            <div class="card service-card">
+              <div class="icon"><i class="fa-solid fa-truck-fast"></i></div>
+              <h3>Livraison & Retour</h3>
+              <p>
+                Livraison et reprise du véhicule à l'adresse souhaitée (sur
+                demande).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="container contact-inner">
+          <div class="contact-card">
+            <h2>Nous contacter</h2>
+            <p>
+              Pour toute question ou réservation, écrivez-nous ou appelez-nous.
+            </p>
+            <ul class="contact-list">
+              <li><strong>Adresse:</strong> Dakar, Sénégal</li>
+              <li><strong>Téléphone:</strong> <a href="tel:+221771450218">+221 77 145 02 18</a></li>
+              <li><strong>Email:</strong> <a href="mailto:ismaila874@gmail.com">ismaila874@gmail.com</a></li>
+            </ul>
+            <form class="contact-form">
+              <input type="text" placeholder="Votre nom" required />
+              <input type="email" placeholder="Votre email" required />
+              <textarea placeholder="Votre message" required></textarea>
+              <button class="btn btn-primary" type="submit">Envoyer</button>
+            </form>
+          </div>
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.824526805265!2d-17.474177325848018!3d14.722510674082269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1730011e29529%3A0x46fec3fa3b6c65be!2zU2FjcsOpIGPFk3Vy!5e0!3m2!1sfr!2ssn!4v1759954967205!5m2!1sfr!2ssn"
+              frameborder="0"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; 2025 IND Location. Tous droits réservés.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp contact button -->
+    <a class="whatsapp-fab" href="https://wa.me/221771450218" target="_blank" rel="noopener" aria-label="Contactez-nous sur WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+      (function(){
+        const search = document.getElementById('vehicle-search');
+        const marque = document.getElementById('vehicle-marque');
+        const clearBtn = document.getElementById('clear-filters');
+        const grid = document.getElementById('vehicles-grid');
+        const cards = Array.from(document.querySelectorAll('.vehicle-card'));
+        const countEl = document.getElementById('vehicles-count');
+
+        function updateCount(n){
+          countEl.textContent = n + ' véhicule' + (n>1? 's' : '') ;
+        }
+
+        function applyFilters(){
+          const q = (search && search.value || '').trim().toLowerCase();
+          const m = (marque && marque.value || '').trim().toLowerCase();
+          let visible = 0;
+          cards.forEach(card => {
+            const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
+            const dataMarque = (card.getAttribute('data-marque') || '').toLowerCase();
+            const matchesQ = !q || title.includes(q) || dataMarque.includes(q);
+            const matchesM = !m || dataMarque === m;
+            if(matchesQ && matchesM){ card.classList.remove('hidden'); visible++; } else { card.classList.add('hidden'); }
+          });
+          updateCount(visible);
+        }
+
+        if(search) search.addEventListener('input', applyFilters);
+        if(marque) marque.addEventListener('change', applyFilters);
+        if(clearBtn) clearBtn.addEventListener('click', function(){ if(search) search.value=''; if(marque) marque.value=''; applyFilters(); });
+
+        // initialize
+        applyFilters();
+      })();
+    </script>
+  </body>
+</html>

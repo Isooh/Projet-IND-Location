@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg: #f7f8fa;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #c0392b; /* soft red accent */
+  --accent-2: #111827;
+  --radius: 10px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:var(--accent-2);
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:0 16px}
+
+/* Header */
+.site-header{background:transparent;position:sticky;top:0;z-index:40}
+.header-inner{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--accent-2)}
+.logo-img{width:48px;height:48px;object-fit:cover;border-radius:8px}
+.brand{font-weight:600;font-size:18px}
+
+.main-nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+.main-nav a{color:var(--accent-2);text-decoration:none;font-weight:500}
+.main-nav a:hover{color:var(--accent)}
+
+.actions .btn{padding:8px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.08);background:#fff;color:var(--accent-2);cursor:pointer}
+
+/* Hero */
+.hero{padding:48px 0}
+.hero-inner{display:grid;grid-template-columns:1fr 460px;gap:32px;align-items:center}
+.hero-text h1{font-size:34px;margin:0 0 12px}
+.hero-text h1 span{color:var(--accent)}
+.hero-text p{color:var(--muted);margin-bottom:18px}
+.hero-cta .btn{display:inline-block;margin-right:10px}
+.hero-media img{width:100%;border-radius:12px;box-shadow:0 10px 30px rgba(17,24,39,0.08)}
+
+/* Sections */
+.section{padding:56px 0}
+.section-title{font-size:22px;margin:0 0 18px}
+
+/* Vehicles grid */
+.vehicles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.vehicle-card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 20px rgba(17,24,39,0.04);display:flex;flex-direction:column}
+.vehicle-card .media img{width:100%;height:160px;object-fit:cover;display:block}
+.vehicle-card .card-body{padding:14px;flex:1;display:flex;flex-direction:column}
+.vehicle-card h3{margin:0 0 8px;font-size:16px}
+.vehicle-card p{margin:0 0 12px;color:var(--muted);font-size:13px}
+.card-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+.price{color:var(--accent);font-weight:700}
+.btn-sm{padding:6px 10px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none}
+
+/* small enhancements: hover, filter bar, hidden */
+.vehicle-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(17,24,39,0.08);transition:transform .18s ease,box-shadow .18s ease}
+.vehicles-filters{display:flex;gap:10px;align-items:center;margin:14px 0 22px}
+.vehicles-filters input[type="search"],.vehicles-filters select{padding:8px 10px;border-radius:8px;border:1px solid #e6e6e6;background:#fff}
+.vehicles-filters button{padding:8px 10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:#fff;cursor:pointer}
+.vehicles-count{margin-left:auto;color:var(--muted);font-size:13px}
+.hidden{display:none !important}
+
+/* WhatsApp floating button inspired by Elite Dakar contact CTA */
+.whatsapp-fab{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,0.12);z-index:60;text-decoration:none}
+.whatsapp-fab i{font-size:22px}
+
+/* Services */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.service-card{background:var(--card);padding:18px;border-radius:12px;text-align:center}
+.service-card .icon{font-size:28px;color:var(--accent);margin-bottom:10px}
+.service-card h3{margin:8px 0}
+.service-card p{color:var(--muted);font-size:14px}
+
+/* Contact */
+.contact-inner{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start}
+.contact-card{background:var(--card);padding:20px;border-radius:12px}
+.contact-list{list-style:none;padding:0;margin:8px 0 16px;color:var(--muted)}
+.contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px}
+.contact-form button{padding:10px 16px;border-radius:8px;background:var(--accent);color:#fff;border:none}
+.map iframe{width:100%;height:100%;min-height:360px;border-radius:12px;border:0}
+
+/* Footer */
+.site-footer{background:#000;padding:18px 0;color:#fff}
+.footer-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.footer-inner p{margin:0;color:#fff}
+.socials{display:flex;gap:10px}
+.socials a{color:#fff;text-decoration:none;opacity:0.95}
+.socials a:hover{opacity:1;color:var(--accent)}
+
+@media (min-width:900px){
+  /* keep footer simple on large screens as well */
+  .footer-inner{flex-direction:row;align-items:center;justify-content:space-between;padding:18px 16px}
+}
+
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr}
+  .header-inner{flex-direction:column;align-items:flex-start}
+  .main-nav ul{flex-wrap:wrap}
+}
+
+@media (max-width:480px){
+  .logo-img{width:40px;height:40px}
+  .hero-text h1{font-size:24px}
+}
