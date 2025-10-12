@@ -5,13 +5,57 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>IND Location</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#f3e8ff',
+                100: '#e9d5ff',
+                200: '#d8b4fe',
+                300: '#c084fc',
+                400: '#a78bfa',
+                500: '#8b5cf6',
+              },
+            },
+            boxShadow: {
+              soft: '0 10px 30px rgba(17,24,39,0.08)'
+            },
+            borderRadius: {
+              '2xl': '1.25rem',
+              '3xl': '1.5rem'
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              serif: ['Playfair Display', 'ui-serif', 'Georgia', 'serif']
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(8px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' }
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 900ms ease-out both'
+            }
+          }
+        }
+      };
+    </script>
     <script
       src="https://kit.fontawesome.com/d929329c74.js"
       crossorigin="anonymous"
     ></script>
     <meta name="description" content="Location de véhicules - IND Location" />
   </head>
-  <body>
+  <body class="min-h-screen text-lg font-sans antialiased bg-gradient-to-b from-rose-50 via-sky-50 to-emerald-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-slate-800 dark:text-slate-100 transition-colors duration-300">
     <header class="site-header">
       <div class="container header-inner">
         <a class="logo" href="#home">
@@ -34,34 +78,38 @@
 
         <div class="actions">
           <button class="btn btn-ghost login_btn">Connexion</button>
+          <button id="theme-toggle" class="ml-3 inline-flex items-center gap-2 rounded-full border border-slate-900/10 dark:border-white/10 px-3 py-2 text-sm text-slate-700 dark:text-slate-200 bg-white/60 dark:bg-slate-800/60 hover:bg-white/80 dark:hover:bg-slate-700/70 transition">
+            <i class="fa-solid fa-moon"></i>
+            <span class="hidden sm:inline">Sombre</span>
+          </button>
         </div>
       </div>
     </header>
 
     <main>
-      <section id="home" class="hero">
+      <section id="home" class="hero opacity-0 animate-fade-in">
         <div class="container hero-inner">
           <div class="hero-text">
-            <h1>Louez <span>vos véhicules</span> facilement</h1>
-            <p>
+            <h1 class="font-serif text-5xl md:text-6xl leading-tight text-slate-900 dark:text-white">Louez <span class="text-brand-400">vos véhicules</span> facilement</h1>
+            <p class="text-xl text-slate-600 dark:text-slate-300">
               Choisissez parmi une flotte variée : citadines, SUV, berlines et
               véhicules de prestige. Tarifs compétitifs, service sécurisé et
               assistance 24/7.
             </p>
             <div class="hero-cta">
-              <a href="#cars" class="btn btn-primary">Voir les véhicules</a>
-              <a href="#contact" class="btn btn-outline">Nous contacter</a>
+              <a href="#cars" class="btn btn-primary inline-flex items-center gap-2 rounded-full bg-brand-400 hover:bg-brand-500 text-slate-900 dark:text-white px-6 py-3 shadow-soft transition transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-400/60">Voir les véhicules</a>
+              <a href="#contact" class="btn btn-outline inline-flex items-center gap-2 rounded-full border border-slate-900/10 dark:border-white/10 bg-white/70 dark:bg-white/5 hover:bg-white/90 dark:hover:bg-white/10 text-slate-700 dark:text-slate-200 px-6 py-3 shadow-soft transition">Nous contacter</a>
             </div>
           </div>
           <div class="hero-media">
-            <img src="Images/Range Rover.jpeg" alt="Voiture de location" />
+            <img class="rounded-3xl shadow-2xl shadow-slate-200/70 dark:shadow-black/30 ring-1 ring-black/5" src="Images/Range Rover.jpeg" alt="Voiture de location" />
           </div>
         </div>
       </section>
 
       <section id="cars" class="section vehicles">
         <div class="container">
-          <h2 class="section-title">Nos véhicules</h2>
+          <h2 class="section-title font-serif text-3xl md:text-4xl text-slate-900 dark:text-white">Nos véhicules</h2>
 
           <div class="vehicles-filters" aria-hidden="false">
             <input id="vehicle-search" type="search" placeholder="Rechercher un modèle, ex: Hyundai, Jeep..." aria-label="Rechercher des véhicules">
@@ -77,7 +125,7 @@
           </div>
 
           <div class="grid vehicles-grid" id="vehicles-grid">
-            <article class="card vehicle-card" data-marque="Hyundai">
+            <article class="card vehicle-card rounded-3xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-sm shadow-soft hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition duration-300 border border-slate-900/5 dark:border-white/10" data-marque="Hyundai">
               <div class="media">
                 <img src="Images/Elanra.jpeg" alt="Hyundai Elantra" />
               </div>
@@ -91,7 +139,7 @@
               </div>
             </article>
 
-            <article class="card vehicle-card" data-marque="Jeep">
+            <article class="card vehicle-card rounded-3xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-sm shadow-soft hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition duration-300 border border-slate-900/5 dark:border-white/10" data-marque="Jeep">
               <div class="media">
                 <img src="Images/Jeep G C.jpeg" alt="Jeep Grand Cherokee" />
               </div>
@@ -105,7 +153,7 @@
               </div>
             </article>
 
-            <article class="card vehicle-card" data-marque="Ford">
+            <article class="card vehicle-card rounded-3xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-sm shadow-soft hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition duration-300 border border-slate-900/5 dark:border-white/10" data-marque="Ford">
               <div class="media">
                 <img src="Images/Fusion.jpeg" alt="Ford Fusion" />
               </div>
@@ -119,7 +167,7 @@
               </div>
             </article>
 
-            <article class="card vehicle-card" data-marque="Hyundai">
+            <article class="card vehicle-card rounded-3xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-sm shadow-soft hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition duration-300 border border-slate-900/5 dark:border-white/10" data-marque="Hyundai">
               <div class="media">
                 <img src="Images/Santafé.jpeg" alt="Hyundai Santafé" />
               </div>
@@ -133,7 +181,7 @@
               </div>
             </article>
 
-            <article class="card vehicle-card" data-marque="Hyundai">
+            <article class="card vehicle-card rounded-3xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-sm shadow-soft hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition duration-300 border border-slate-900/5 dark:border-white/10" data-marque="Hyundai">
               <div class="media">
                 <img src="Images/Sonata.jpeg" alt="Hyundai Sonata" />
               </div>
@@ -147,7 +195,7 @@
               </div>
             </article>
 
-            <article class="card vehicle-card" data-marque="Kia">
+            <article class="card vehicle-card rounded-3xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-sm shadow-soft hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition duration-300 border border-slate-900/5 dark:border-white/10" data-marque="Kia">
               <div class="media">
                 <img src="Images/Kia Sportage.jpeg" alt="Kia Sportage" />
               </div>
@@ -162,7 +210,7 @@
               </div>
             </article>
 
-            <article class="card vehicle-card" data-marque="Ford">
+            <article class="card vehicle-card rounded-3xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-sm shadow-soft hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition duration-300 border border-slate-900/5 dark:border-white/10" data-marque="Ford">
               <div class="media">
                 <img src="Images/2014 Ford Edge.jpeg" alt="Ford Edge" />
               </div>
@@ -176,7 +224,7 @@
               </div>
             </article>
 
-            <article class="card vehicle-card" data-marque="Senova">
+            <article class="card vehicle-card rounded-3xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-sm shadow-soft hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition duration-300 border border-slate-900/5 dark:border-white/10" data-marque="Senova">
               <div class="media">
                 <img src="Images/Senova.jpeg" alt="Senova X55" />
               </div>
@@ -195,9 +243,9 @@
 
       <section id="services" class="section services">
         <div class="container">
-          <h2 class="section-title">Nos services</h2>
+          <h2 class="section-title font-serif text-3xl md:text-4xl text-slate-900 dark:text-white">Nos services</h2>
           <div class="grid services-grid">
-            <div class="card service-card">
+            <div class="card service-card rounded-3xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-sm shadow-soft hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition duration-300 border border-slate-900/5 dark:border-white/10">
               <div class="icon"><i class="fa-solid fa-car-side"></i></div>
               <h3>Assurance complète</h3>
               <p>
@@ -206,7 +254,7 @@
               </p>
             </div>
 
-            <div class="card service-card">
+            <div class="card service-card rounded-3xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-sm shadow-soft hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition duration-300 border border-slate-900/5 dark:border-white/10">
               <div class="icon"><i class="fa-solid fa-headset"></i></div>
               <h3>Support 24/7</h3>
               <p>
@@ -214,7 +262,7 @@
               </p>
             </div>
 
-            <div class="card service-card">
+            <div class="card service-card rounded-3xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-sm shadow-soft hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition duration-300 border border-slate-900/5 dark:border-white/10">
               <div class="icon"><i class="fa-solid fa-truck-fast"></i></div>
               <h3>Livraison & Retour</h3>
               <p>
@@ -227,8 +275,8 @@
       </section>
 
       <section id="contact" class="section contact">
-        <div class="container contact-inner">
-          <div class="contact-card">
+          <div class="container contact-inner">
+          <div class="contact-card rounded-3xl bg-white/70 dark:bg-slate-800/60 backdrop-blur-sm shadow-soft border border-slate-900/5 dark:border-white/10">
             <h2>Nous contacter</h2>
             <p>
               Pour toute question ou réservation, écrivez-nous ou appelez-nous.
@@ -250,6 +298,7 @@
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.824526805265!2d-17.474177325848018!3d14.722510674082269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1730011e29529%3A0x46fec3fa3b6c65be!2zU2FjcsOpIGPFk3Vy!5e0!3m2!1sfr!2ssn!4v1759954967205!5m2!1sfr!2ssn"
               frameborder="0"
               style="border: 0"
+              class="rounded-3xl shadow-soft ring-1 ring-black/5"
               allowfullscreen=""
               loading="lazy"
             ></iframe>
@@ -258,7 +307,7 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer bg-gradient-to-r from-brand-400/20 via-rose-200/20 to-sky-200/20 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900">
       <div class="container footer-inner">
         <p>&copy; 2025 IND Location. Tous droits réservés.</p>
         <div class="socials">
@@ -273,6 +322,23 @@
     <a class="whatsapp-fab" href="https://wa.me/221771450218" target="_blank" rel="noopener" aria-label="Contactez-nous sur WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+    <script>
+      (function() {
+        const root = document.documentElement;
+        const toggleBtn = document.getElementById('theme-toggle');
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialDark = stored ? stored === 'dark' : prefersDark;
+        root.classList.toggle('dark', initialDark);
+        if (toggleBtn) {
+          toggleBtn.addEventListener('click', function(){
+            const isDark = root.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          });
+        }
+      })();
+    </script>
 
     <script>
       (function(){
