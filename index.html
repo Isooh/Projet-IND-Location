@@ -27,7 +27,7 @@
           <ul>
             <li><a href="#home">Accueil</a></li>
             <li><a href="#cars">Véhicules</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#services">Autres Activités</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -86,7 +86,7 @@
                 <p>Modèle: Elantra</p>
                 <div class="card-foot">
                   <span class="price">30 000 FCFA</span>
-                  <a class="btn btn-sm" href="#">Réservez</a>
+                  <a class="btn btn-sm" href="reservation.html">Réservez</a>
                 </div>
               </div>
             </article>
@@ -171,7 +171,7 @@
                 <p>Modèle: Edge</p>
                 <div class="card-foot">
                   <span class="price">35 000 FCFA</span>
-                  <a class="btn btn-sm" href="#">Réservez</a>
+                  <a class="btn btn-sm" href="reservation.html">Réservez</a>
                 </div>
               </div>
             </article>
@@ -195,7 +195,7 @@
 
       <section id="services" class="section services">
         <div class="container">
-          <h2 class="section-title">Nos services</h2>
+          <h2 class="section-title">Autres Activités</h2>
           <div class="grid services-grid">
             <div class="card service-card">
               <div class="icon"><i class="fa-solid fa-car-side"></i></div>
@@ -238,10 +238,11 @@
               <li><strong>Téléphone:</strong> <a href="tel:+221771450218">+221 77 145 02 18</a></li>
               <li><strong>Email:</strong> <a href="mailto:ismaila874@gmail.com">ismaila874@gmail.com</a></li>
             </ul>
-            <form class="contact-form">
-              <input type="text" placeholder="Votre nom" required />
-              <input type="email" placeholder="Votre email" required />
-              <textarea placeholder="Votre message" required></textarea>
+            <form action="https://formspree.io/f/xblzznby"  class="contact-form" method="post">
+              <input type="text" placeholder="Votre nom" required name="nom" />
+              <input type="email" placeholder="Votre email" required name="email" />
+              <input type="number" name="tel" placeholder="Votre téléphone" required />
+              <textarea placeholder="Votre message" required name="message"></textarea>
               <button class="btn btn-primary" type="submit">Envoyer</button>
             </form>
           </div>
@@ -260,6 +261,27 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
+        <h4 class="props">
+          A propos de <strong>IND Location</strong>
+          <p>
+            IND Location est une entreprise de location de véhicules dédiée à
+            fournir des solutions de mobilité flexibles et abordables. Notre
+            mission est de rendre la location de voitures simple, accessible et
+            agréable pour tous nos clients.
+          </p>
+        </h4>
+        <h4 class="var_service">
+          Variétés de services :
+          <ul>
+            <li>Location de voitures à court terme</li>
+            <li>Location de voitures à long terme</li>
+            <li>Services de location pour entreprises</li>
+            <li>Options de location avec chauffeur</li>
+            <li>Transfert aéroport</li>
+            <li>Transport personnel</li>
+            <li>Transport Touristique</li>
+          </ul>
+        </h4>
         <p>&copy; 2025 IND Location. Tous droits réservés.</p>
         <div class="socials">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
